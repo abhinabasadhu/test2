@@ -2,7 +2,7 @@ import React from "react";
 import { useRef } from "react";
 import { Form, Button, Container } from "react-bootstrap";
 import axios from "axios";
-
+import "./app.css";
 function App() {
   const inputId = useRef();
   const inputArtist = useRef();
@@ -43,7 +43,7 @@ function App() {
   }
   return (
     <div className="App">
-      <Container>
+      <Container className="con">
         <Form onSubmit={submithandlerID}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Id</Form.Label>{" "}
@@ -61,8 +61,8 @@ function App() {
           </Form.Group>
           <Button variant="primary" type="submit">
             Submit
-          </Button>
-        </Form>
+          </Button>{" "}
+        </Form>{" "}
         <Form onSubmit={submithandlerArtist}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Artist</Form.Label>{" "}
