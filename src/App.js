@@ -12,22 +12,24 @@ function App() {
   async function submithandlerID(e) {
     e.preventDefault();
     // console.log(entered);
-    await axios({
+    const res = await axios({
       method: "post",
       url: "http://localhost:3500/test/id",
       data: { id: inputId.current.value },
       headers: {
         "Content-Type": "application/json",
       },
-    }).then((res) => {
-      console.log(res.data);
-      setdata(res.data);
     });
+    if (!res.ok) {
+      console.log("No data Available");
+    }
+    console.log(res.data);
+    setdata(res.data);
   }
 
   async function submithandlerArtist(e) {
     e.preventDefault();
-    await axios({
+    const res = await axios({
       method: "post",
       url: "http://localhost:3500/test/artist",
       headers: {
@@ -36,10 +38,12 @@ function App() {
       data: {
         artist: inputArtist.current.value,
       },
-    }).then((res) => {
-      console.log(res.data);
-      setdata2(res.data);
     });
+    if (!res) {
+      console.log("No Data Avalable");
+    }
+    console.log(res.data);
+    setdata2(res.data);
   }
   return (
     <div className="App">
