@@ -59,8 +59,8 @@ function App() {
               ref={inputId}
             />
             <Form.Text className="text-muted">
-              <li>{loadeddata && loadeddata.artist}</li>
-              <li> {loadeddata && loadeddata.title}</li>
+              <li> Artist - {loadeddata && loadeddata.artist}</li>
+              <li>Title - {loadeddata && loadeddata.title}</li>
             </Form.Text>
           </Form.Group>
           <Button variant="primary" type="submit">
@@ -72,8 +72,8 @@ function App() {
             <Form.Label>Artist</Form.Label>{" "}
             <Form.Control type="text" placeholder="text" ref={inputArtist} />
             <Form.Text className="text-muted">
-              <li>{loadeddata2 && loadeddata2.title}</li>
-              <li>{loadeddata2 && loadeddata2.id}</li>
+              <li> Title - {loadeddata2 && loadeddata2.title}</li>
+              <li> Id - {loadeddata2 && loadeddata2.id}</li>
             </Form.Text>
           </Form.Group>
           <Button variant="primary" type="submit">
